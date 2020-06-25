@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PROYECTATE.MX</title>
+    <link rel="icon" type="image/png" href="static/img/favicon.ico"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Barra de navegacion</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="static/img/Proyectate-logo.svg" height="20" alt="PROYECTATE.MX-logo"></a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="acercade.html">ACERCA DE</a></li>
+                    <li><a href="categorias.html">CATEGORIAS</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right mr-50">
+                    <a class="btn btn-verde navbar-btn" href="categorias.html">COMENZAR</a>
+                    <a class="btn btn-verde navbar-btn" href="loginreg.html">LOGIN</a>
+                </ul>
+            </div><!-- Termina nav-collapse -->
+        </div><!-- Termina container-fluid -->
+    </nav><!-- Termina navbar -->
+    
+    <!-- ============================================================== -->
+    <!-- [INICIA CONTENIDO] (No modificar nada antes de esta línea)     -->
+ 
+   <div class="container-fluid login">
+       <div class="row">
+           <div class= "col-xs-12 col-sm-12 col-md-5 col-lg-5">
+              <div class="fondo-gris-form">
+                   <div class="login-titulo">
+                    <h1 class="text-bold">COMENZEMOS</h1>
+                </div>
+                   <form action="categorias.html" id="comenzar" method="post">
+                       <div class="form-group">
+                          <input class="form-control" id="correo electronico" type="email" placeholder="Correo electronico" required name="loginemail">
+                       </div>
+                        <div class="form-group">
+                            <input class="form-control" id="contraseña" type="password" placeholder="Contraseña" required name="loginpass">
+                        </div>
+                       <div class="form-group text-right">
+                           <input class="link" type="submit" value="Recuperar contraseña" name="recuperaclave" onclick="recuperacontrasenia()">
+                       </div>
+                       <div class="alert alert-danger" >
+                          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                          Error: La dirección e-mail o la clave son incorrectos.
+                       </div>
+                       <div class="alert alert-success" >
+                          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                          Se ha enviado su nueva contraseña a su cuenta de e-mail.
+                       </div>
+                       <!-- Posibles mensajes para este formulario
+                          Error: La dirección e-mail o la clave son incorrectos. <- al presionar login
+                          Error: La dirección e-mail no está registrada <- al presionar recuperar contraseña
+                          Se ha enviado su nueva contraseña a su cuenta de e-mail.
+                        -->
+                        <input class="btn btn-verde btn-lg center-block" type="submit" value="LOGIN" name="login">
+                    </form>
+                </div>
+           </div>
+           
+        <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">
+            <div class="fondo-gris-form">
+                <div class="login-titulo-dos">
+                    <h1 class="text-bold">REGISTRATE</h1>
+                </div>
+                <form action="registrar.py" class="" id="registro" method="post">
+                    <div class="form-group">
+                        <input class="form-control" id="nombre" type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="contrasenia" type="password" placeholder="Contraseña" onkeyup="validarPass()"  required>
+                    </div>
+                    <div class="alert alert-danger" id="msjPassError1">
+                        <p>
+                            La contraseña debe tener como minimo una minuscula, una mayuscula, un numero y minimo 8 caracteres
+                        </p>
+                    </div>  
+                    <div class="form-group">
+                        <input class="form-control" id="contrasenia2" type="password" placeholder="Vuelve a escribir la contraseña" onkeyup="validarPass2()" required>
+                    </div>  
+                    <div class="alert alert-danger" id="msjPassError2">
+                        <p>Las contraseñas no son iguales</p>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="Genero" required>
+                            <option value="">Genero</option>
+                            <option value="F">Femenino</option>
+                            <option value="M">Masculino</option>
+                            <option value="O">Otro</option>
+                            <option value="N">Prefiero no decirlo</option>
+                        </select>
+                     </div>
+                    <div class="form-group">
+                        <select class="form-control" id="Edad" required>
+                            <option value="">Edad</option>
+                            <option value="18">Menos de 18 años</option>
+                            <option value="24">De 18 a 24 años</option>
+                            <option value="30">De 25 a 30 años</option>
+                            <option value="31">Mas de 30 años</option>
+                            <option value="0">Prefiero no decirlo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="País" required>
+                           <option value="">País</option>
+                            <option value="MX">México</option>
+                            <option>Afganistán</option>
+                            <option>Albania</option>
+                            <option>Alemania</option>
+                            <option>Andorra</option>
+                            <option>Angola</option>
+                            <option>Anguilla</option>
+                            <option>Antártida</option>
+                            <option>Antigua y Barbuda</option>
+                            <option>Antillas Holandesas</option>
+                            <option>Arabia Saudí</option>
+                            <option>Argelia</option>
+                            <option>Argentina</option>
+                            <option>Armenia</option>
+                            <option>Aruba</option>
+                            <option>Australia</option>
+                            <option>Austria</option>
+                            <option>Azerbaiyán</option>
+                            <option>Bahamas</option>
+                            <option>Bahrein</option>
+                            <option>Bangladesh</option>
+                            <option>Barbados</option>
+                            <option>Bélgica</option>
+                            <option>Belice</option>
+                            <option>Benin</option>
+                            <option>Bermudas</option>
+                            <option>Bielorrusia</option>
+                            <option>Birmania</option>
+                            <option>Bolivia</option>
+                            <option>Bosnia y Herzegovina</option>
+                            <option>Botswana</option>
+                            <option>Brasil</option>
+                            <option>Brunei</option>
+                            <option>Bulgaria</option>
+                            <option>Burkina Faso</option>
+                            <option>Burundi</option>
+                            <option>Bután</option>
+                            <option>Cabo Verde</option>
+                            <option>Camboya</option>
+                            <option>Camerún</option>
+                            <option>Canadá</option>
+                            <option>Chad</option>
+                            <option>Chile</option>
+                            <option>China</option>
+                            <option>Chipre</option>
+                            <option>Ciudad del Vaticano</option>
+                            <option>Colombia</option>
+                            <option>Comores</option>
+                            <option>Congo</option>
+                            <option>Congo,República Democrática del</option>
+                            <option>Corea</option>
+                            <option>Corea del Norte</option>
+                            <option>Costa de Marfíl</option>
+                            <option>Costa Rica</option>
+                            <option>Croacia (Hrvatska)</option>
+                            <option>Cuba</option>
+                            <option>Dinamarca</option>
+                            <option>Djibouti</option>
+                            <option>Dominica</option>
+                            <option>Ecuador</option>
+                            <option>Egipto</option>
+                            <option>Salvador</option>
+                            <option>Emiratos Árabes Unidos</option>
+                            <option>Eritrea</option>
+                            <option>Eslovenia</option>
+                            <option>Estados Unidos</option>
+                            <option>Estonia</option>
+                            <option>Etiopía</option>
+                            <option>Fiji</option>
+                            <option>Filipinas</option>
+                            <option>Finlandia</option>
+                            <option>Francia</option>
+                            <option>Gabón</option>
+                            <option>Gambia</option>
+                            <option>Georgia</option>
+                            <option>Ghana</option>
+                            <option>Gibraltar</option>
+                            <option>Granada</option>
+                            <option>Grecia</option>
+                            <option>Groenlandia</option>
+                            <option>Guadalupe</option>
+                            <option>Guam</option>
+                            <option>Guatemala</option>
+                            <option>Guayana</option>
+                            <option>Guayana Francesa</option>
+                            <option>Guinea</option>
+                            <option>Guinea Ecuatorial</option>
+                            <option>Guinea-Bissau</option>
+                            <option>Haití</option>
+                            <option>Honduras</option>
+                            <option>Hungría</option>
+                            <option>India</option>
+                            <option>Indonesia</option>
+                            <option>Irak</option>
+                            <option>Irán</option>
+                            <option>Irlanda</option>
+                            <option>Isla Bouvet</option>
+                            <option>Isla de Christmas</option>
+                            <option>Islandia</option>
+                            <option>Islas Caimán</option>
+                            <option>Islas Cook</option>
+                            <option>Islas de Cocos o Keeling</option>
+                            <option>Islas Faroe</option>
+                            <option>Islas Heard y McDonald</option>
+                            <option>Islas Malvinas</option>
+                            <option>Islas Marianas del Norte</option>
+                            <option>Islas Marshall</option>
+                            <option>Islas menores de Estados Unidos</option>
+                            <option>Islas Palau</option>
+                            <option>Islas Salomón</option>
+                            <option>Islas Svalbard y Jan Mayen</option>
+                            <option>Islas Tokelau</option>
+                            <option>Islas Turks y Caicos</option>
+                            <option>Islas Vírgenes (EEUU)</option>
+                            <option>Islas Vírgenes (Reino Unido)</option>
+                            <option>Islas Wallis y Futuna</option>
+                            <option>Israel</option>
+                            <option>Italia</option>
+                            <option>Jamaica</option>
+                            <option>Japón</option>
+                            <option>Jordania</option>
+                            <option>Kazajistán</option>
+                            <option>Kenia</option>
+                            <option>Kirguizistán</option>
+                            <option>Kiribati</option>
+                            <option>Kuwait</option>
+                            <option>Laos</option>
+                            <option>Lesotho</option>
+                            <option>Letonia</option>
+                            <option>Líbano</option>
+                            <option>Liberia</option>
+                            <option>Libia</option>
+                            <option>Liechtenstein</option>
+                            <option>Lituania</option>
+                            <option>Luxemburgo</option>
+                            <option>Macedonia, Ex-República Yugoslava de</option>
+                            <option>Madagascar</option>
+                            <option>Malasia</option>
+                            <option>Malawi</option>
+                            <option>Maldivas</option>
+                            <option>Malí</option>
+                            <option>Malta</option>
+                            <option>Marruecos</option>
+                            <option>Martinica</option>
+                            <option>Mauricio</option>
+                            <option>Mauritania</option>
+                            <option>Mayotte</option>
+                            <option>Micronesia</option>
+                            <option>Moldavia</option>
+                            <option>Mónaco</option>
+                            <option>Mongolia</option>
+                            <option>Montserrat</option>
+                            <option>Mozambique</option>
+                            <option>Namibia</option>
+                            <option>Nauru</option>
+                            <option>Nepal</option>
+                            <option>Nicaragua</option>
+                            <option>Níger</option>
+                            <option>Nigeria</option>
+                            <option>Niue</option>
+                            <option>Norfolk</option>
+                            <option>Noruega</option>
+                            <option>Nueva Caledonia</option>
+                            <option>Nueva Zelanda</option>
+                            <option>Omán</option>
+                            <option>Países Bajos</option>
+                            <option>Panamá</option>
+                            <option>Papúa Nueva Guinea</option>
+                            <option>Paquistán</option>
+                            <option>Paraguay</option>
+                            <option>Perú</option>
+                            <option>Pitcairn</option>
+                            <option>Polinesia Francesa</option>
+                            <option>Polonia</option>
+                            <option>Portugal</option>
+                            <option>Puerto Rico</option>
+                            <option>Qatar</option>
+                            <option>Reino Unido</option>
+                            <option>República Centroafricana</option>
+                            <option>República Checa</option>
+                            <option>República de Sudáfrica</option>
+                            <option>República Dominicana</option>
+                            <option>República Eslovaca</option>
+                            <option>Reunión</option>
+                            <option>Ruanda</option>
+                            <option>Rumania</option>
+                            <option>Rusia</option>
+                            <option>Sahara Occidental</option>
+                            <option>Saint Kitts y Nevis</option>
+                            <option>Samoa</option>
+                            <option>Samoa Americana</option>
+                            <option>San Marino</option>
+                            <option>San Vicente y Granadinas</option>
+                            <option>Santa Helena</option>
+                            <option>Santa Lucía</option>
+                            <option>Santo Tomé y Príncipe</option>
+                            <option>Senegal</option>
+                            <option>Seychelles</option>
+                            <option>Sierra Leona</option>
+                            <option>Singapur</option>
+                            <option>Siria</option>
+                            <option>Somalia</option>
+                            <option>Sri Lanka</option>
+                            <option>St Pierre y Miquelon</option>
+                            <option>Suazilandia</option>
+                            <option>Sudán</option>
+                            <option>Suecia</option>
+                            <option>Suiza</option>
+                            <option>Surinam</option>
+                            <option>Tailandia</option>
+                            <option>Taiwán</option>
+                            <option>Tanzania</option>
+                            <option>Tayikistán</option>
+                            <option>Territorios franceses del Sur</option>
+                            <option>Timor Oriental</option>
+                            <option>Togo</option>
+                            <option>Tonga</option>
+                            <option>Trinidad y Tobago</option>
+                            <option>Túnez</option>
+                            <option>Turkmenistán</option>
+                            <option>Turquía</option>
+                            <option>Tuvalu</option>
+                            <option>Ucrania</option>
+                            <option>Uganda</option>
+                            <option>Uruguay</option>
+                            <option>Uzbekistán</option>
+                            <option>Vanuatu</option>
+                            <option>Venezuela</option>
+                            <option>Vietnam</option>
+                            <option>Yemen</option>
+                            <option>Yugoslavia</option>
+                            <option>Zambia</option>
+                            <option>Zimbabue</option>
+                        </select>
+                    </div>
+                    <input class="btn btn-verde btn-lg center-block" type="submit" value="REGÍSTRATE" id="registrate">
+                    <!--<a href="" class="btn btn-verde btn-lg center-block" >REGÍSTRATE</a>-->
+                    
+                </form>
+            </div>
+       </div>
+    </div>
+</div>
+        
+    
+    <!-- [TERMINA CONTENIDO] (No modificar nada después de esta línea)  -->
+    <!-- ============================================================== -->
+                
+        <footer class="container-fluid">
+            <aside id="redes-sociales">
+                <a href="#"><img src="static/img/facebook.svg"></a>
+                <a href="#"><img src="static/img/twitter.svg"></a>
+            </aside>
+            <p> <b>Proyectate.mx es una iniciativa del Jóvenes por los ODS México AC.</b></p>
+            <p>Email: <a class="btn" href="mailto:contacto@proyectate.mx" target="_blank">contacto@proyectate.mx</a> </p>
+            <nav class="row text-center">
+                <div class="col col-sm-offset-2 col-sm-4">
+                    <a class="pie-menu-op btn" href="legal.html#disclaimer">Conoce nuestro Aviso legal</a>
+                </div>
+                <div class="col col-sm-4">
+                    <a class="pie-menu-op btn" href="legal.html">Aviso de Privacidad</a>
+                </div>
+            </nav>
+        </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous">
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous">
+    </script>    
+    <script src="static/js/validaciones.js"></script>
+</body>
+</html>
