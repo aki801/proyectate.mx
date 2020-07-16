@@ -376,10 +376,15 @@ footer a.btn:hover {
 
 
 /********** Estilos para Login *************/
-.login {
-    background-color: #e9e9e9;
+#msjPassError1, #msjPassError2 {
+    display: none;
 }
-.fondo-gris-form {
+
+.login {
+    background-color: #dddedd;
+    padding: 30px 30px 0px;
+}
+.fondo-form {
     background-color: #fff;
     padding: 0px 35px 35px 35px;
     border-radius: 20px;
@@ -387,35 +392,47 @@ footer a.btn:hover {
     margin-bottom: 70px;
 }
 
-.login-titulo, .login-titulo-dos {
+.login-titulo, .registro-titulo {
     position: relative;
     height: auto;
     z-index: 0;
     text-align: center;
     margin-top: 0px;
-    padding-bottom: -100px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     color: #fff;
 }
 
-.login-titulo::after, .login-titulo-dos::after{
+.login-titulo::after, .registro-titulo::after{
     content: "";
     display: block;
     position: absolute;
     left: -60px;
     right: -60px;
-    top:-100px;
+    top:-70px;
     bottom: 0px;
     background-image: url("../img/brochazo_verde-login.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1
 }
-.login-titulo-dos::after{
+.registro-titulo::after{
     background-image: url("../img/brochazo_roja_login.svg");
     }
-#msjPassError1, #msjPassError2 {
-    display: none;
+
+input:invalid {
+    border-color: red;
+}
+input,
+input:valid {
+    border-color: #ccc;
+}
+.login .link {
+    background-color: transparent;
+    border: none;
+    color: #337ab7;
+}
+.login .link:hover {
+    text-decoration: underline;
 }
 /********** Estilos para módulos *************/
 
@@ -586,6 +603,15 @@ Color de fondo para la descripción: #eeeeee
 .mb-0 {
     margin-bottom: 0;
 }
+.mb-5 {
+    margin-bottom: 5px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-25 {
+    margin-bottom: 25px;
+}
 .mr-50 {
     margin-right: 0.5em !important;
 }
@@ -636,7 +662,6 @@ Color de fondo para la descripción: #eeeeee
     justify-content: center;
 }
 
-/*Estilos añadidoa para login?*/
 /*** Estilos para bloques o secciones ***/
 .section {
     margin: 0px -15px;  /* Se anula el padding del container */
@@ -647,9 +672,6 @@ Color de fondo para la descripción: #eeeeee
     padding-top: 0px;
     padding-bottom: 0px;
 }
-/**************************************
-  Estilos para componentes
-**************************************/
 
 /**************************************
   Corrigiendo estilos de bootstrap
@@ -676,10 +698,12 @@ Color de fondo para la descripción: #eeeeee
     .navbar-collapse.collapse.in {
         display: block!important;
     }
+    /*
     .navbar-collapse *[class*='navbar-'] {
         float: none!important;
         margin: 7.5px -15px;
     }
+    */
     .navbar-nav > li {
         float: none;
     }
@@ -688,142 +712,86 @@ Color de fondo para la descripción: #eeeeee
         padding-bottom: 10px;
     }
 }
-/*******************************************************************
-        login
-***********************************************************/
-.login {
-    background-color: #dddedd;
-    padding: 30px 30px 0px;
-}
-.fondo-gris-form {
-    background-color: #fff;
-    padding: 0px 35px 35px 35px;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-bottom: 70px;
-}
 
-.login-titulo, .login-titulo-dos {
-    position: relative;
-    height: auto;
-    z-index: 0;
-    text-align: center;
-    margin-top: 0px;
-    padding-bottom: -100px;
-    padding-bottom: 80px;
-    color: #fff;
-}
-
-.login-titulo::after, .login-titulo-dos::after{
-    content: "";
-    display: block;
-    position: absolute;
-    left: -60px;
-    right: -60px;
-    top:-100px;
-    bottom: 0px;
-    background-image: url("../img/brochazo_verde-login.svg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    z-index: -1
-}
-.login-titulo-dos::after{
-    background-image: url("../img/brochazo_roja_login.svg");
-    }
-
-input:invalid {
-    border-color: red;
-}
-input,
-input:valid {
-    border-color: #ccc;
-}
-.login .link {
-    background-color: transparent;
-    border: none;
-    color: #337ab7;
-}
-.login .link:hover {
-    text-decoration: underline;
-}
 /**********Perfil*************/
-.fondo-gris-form {
-    background-color: #fff;
-    padding: 0px 35px 35px 35px;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-bottom: 70px;
-}
-
-.login-titulo-perfil {
+.perfil-titulo {
     position: relative;
-    height: auto;
-    z-index: 0;
-    text-align: center;
-    margin-top: 0px;
-    padding-bottom: -100px;
-    padding-bottom: 80px;
-    color: #fff;
-
+    height: 1px; /* Se necesita 1px de altura cuando menos para aplicar márgenes */
+    margin-bottom: 80px;
 }
-
-.login-titulo-perfil::after{
+.perfil-titulo::after{
     content: "";
     display: block;
     position: absolute;
     left: -60px;
     right: -60px;
-    top:-120px;
-    bottom: 0px;
-    background-image: url("../img/AJUSTESPERFIL_head.png");
+    top:-80px;
+    bottom: -80px;
+    background-image: url("../img/ajustesperfil_head-xs.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    z-index: -1;
 }
 
-.input-nombre {
-    width: auto;
-    font-size: calc(1em + 1vw);
-    border: 0px;
-}
 
-.linea-verde {
-    width: 100%;
-    height: auto;
-
-
-}
 .tarjeta {
-  width: 220px;
-  height: 190px;
-  margin: 10px auto;
-
+    margin-bottom: 15px;
 }
 .avatar {
   overflow: hidden;
   border-radius: 50%;
-  background-color: #eee;
-  width: 100%;
-  height: 100%;
   position: relative;
+  width: 80%; /* Define el ancho del avatar en porcentaje */
 }
-.tarjeta img {
-  height: 100%;
-}
-
 .mascara {
   position: absolute;
-  left:0px;
-  right: 0px;
+  width: 100%;
   bottom: 0px;
-  top: 75%;
   background-color: rgba(0, 180, 0, 0.45);
-  color: white;
-  font-size: 35px;
-  text-align: center;
+  padding: 10px 0px;
+}
 
+.perfil .input-nombre {
+    width: 100%;
+    font-size: calc(1em + 0.2vw);
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0, 0.075);
+    border-bottom: 2px solid var(--verde);
+    margin-bottom: 15px;
+}
+
+.perfil .input-nombre:focus {
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0, 0.075), 0 3px 5px rgba(102,179,46,0.6);
+}
+
+.perfil .form-group {
+    padding: 4px 0px;
+}
+.perfil .form-control {
+    border-radius: 0px;
+}
+.perfil .form-control:focus {
+    border-color: var(--verde);
+    box-shadow: inset 0px 1px 1px 1px rgba(0,0,0, 0.075), 0 3px 5px rgba(102,179,46,0.6);
+}
+.perfil .etiqueta-normal {
+    font-weight: normal;
+}
+
+.btn-gc {
+    height: auto;
+    width: 100%;
+    border: none;
+}
+
+
+.btn-gc:hover {
+    color: #fff;
+    background-color: #549526;
+    border-color: #498221;
 }
 /**********Termina Perfil*************/
+
 
 /**********Estilos de sidebar actividades *************/
 
@@ -854,9 +822,8 @@ input:valid {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-
 /**********Termina estilos sidebar actividades*************/
+
 
 /**********- Estilos de actividad de texto *************/
 
@@ -895,7 +862,7 @@ input:valid {
 .brojo textarea {
     color: #e37474;
 }
-
+/*
 input[type="text"] {
   height: 20pt;
   width: 100%;
@@ -906,6 +873,7 @@ input[type="text"] {
   margin-top: 5pt;
     
 }
+*/
 .options {
   width: 100%;
   height: 30pt;
@@ -918,6 +886,7 @@ background-color: #fff;
   border-left: 1px solid #ddd;
   height: 20px;
     }
+/*
 button {
   margin: 0;
   padding: 0;
@@ -931,6 +900,8 @@ button {
 button:active {
   color: #333;
 }
+*/
+/*
 select {
   height: 30pt;
   -webkit-appearance: none;
@@ -947,13 +918,13 @@ input[type="number"] {
   padding-right: 5pt;
   outline: none;
     }
-
+*/
 /**********Termina Actividad texto *************/
 
-/*******************************************************************************
-Actividad de opcion
-*******************************************************************************/
 
+/***********************************************************************
+Actividad de opcion
+************************************************************************/
 .custom-radio1, .custom-radio2, .custom-radio3 {
     background-color: #e2e2e2;
     border-radius: 15px;
@@ -981,14 +952,12 @@ Actividad de opcion
     padding: 5px;
     margin-left: 15px;
 }
-
 /**********Termina Actividad de opcion *************/
 
 
-/*******************************************************************************
+/************************************************************************
 Actividad de relación
-*******************************************************************************/
-
+************************************************************************/
 .concept {
     margin-bottom: 20px;
 }
@@ -1043,22 +1012,11 @@ Actividad de relación
     background-color: white;
     
 }
-
-
-
-
-
-
-
-
 /**********Termina Actividad relacion *************/
 
-
-
-
-/*******************************************************************************
+/************************************************************************
   Ajustes responsivo
-*******************************************************************************/
+*************************************************************************/
 @media (min-width: 768px) {
     /*** Estilos para bloques o secciones ***/
     .section {
@@ -1106,16 +1064,35 @@ Actividad de relación
     .brochazo-rojo::after {
         right: -35px;
     }
-    /*Ajustes para login*/
+    /*************Ajustes para login******************/
     .login {
         padding: 30px 50px 0px;
     }
-    /*** Estilos relacionados con cateogrías ***/
+    .login-titulo, .registro-titulo {
+	margin-bottom: 20px;
+    }
+    .login-titulo::after, .registro-titulo::after{
+        left: -80px;
+        right: -80px;
+        top:-70px;
+        bottom: 0px;
+    }
+    /************ Estilos relacionados con cateogrías *************/
+    
     .categoria .detalle .logo {
         text-align: right;
     }
     .categoria .detalle .descripcion {
         text-align: left;
+    }
+    /*************Ajustes para perfil******************/
+    .perfil-titulo::after{
+	    background-image: url("../img/ajustesperfil_head.png");
+    }
+    .perfil .input-nombre {
+        margin-top: 80px;
+        font-size: calc(1em + 0.5vw);
+        height: auto;
     }
 }
 
@@ -1201,6 +1178,10 @@ Actividad de relación
     }
     #categoria05::before {
         background-color: rgba(0,0,0,0);
+    }
+    /*************Ajustes para perfil******************/
+    .perfil .input-nombre {
+        margin-top: 50px;
     }
 }
 
