@@ -1,3 +1,6 @@
+/***********************************************************************
+                    Vailadcion para loginreg.html
+/***********************************************************************/
 function validarPass() {
     /* Función para validar que la contraseña sea segura */
     var contrasenia = document.getElementById("contrasenia").value;
@@ -46,3 +49,22 @@ function recuperacontrasenia() {
     }
 }
 
+/***********************************************************************
+                    Vailadcion para actividadtexto.html
+/***********************************************************************/
+function cambiarColor() {
+    /*Funcion que cambia el color del borde de class="atexto brojo" --> class="atexto bverde" */
+    var colorBorde = document.getElementsByClassName("atexto brojo");
+    var texto = document.getElementById("textoRespuesta").value;
+    
+    if (texto != ""){
+        colorBorde.className = "bverde";   
+    }
+    
+    
+}
+
+
+/***********************************************************************
+                    Vailadcion para actividadopcion.html
+/***********************************************************************/

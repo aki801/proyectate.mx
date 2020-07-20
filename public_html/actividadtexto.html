@@ -207,13 +207,13 @@
                     <input type="number" onChange="transform('fontSize', this.value)" value="3" max="7" min="1">
                   </div><!-- termina barra de botones -->
                   <form action="#" class="clearfix" method="post">
-                      <textarea class="form-control" name="respuesta" rows="5">No has ingresado tu aporte</textarea>
+                      <textarea class="form-control" id="textoRespuesta" rows="5" placeholder="No has ingresado tu aporte" onchange="cambiarColor()"></textarea>
                       <input class="btn btn-verde pull-right" type="submit" value="GUARDAR" />
                   </form>
     </div>
                
                
-               <div class="atexto bverde">
+               <!--<div class="atexto bverde">
                   <div class="options">
                     <button onClick="transform('bold', null)">
                       <i class="fas fa-bold"></i>
@@ -255,12 +255,12 @@
                     </select>
                     <div class="seperator"></div>
                       <input type="number" onChange="transform('fontSize', this.value)" value="3" max="7" min="1">
-                  </div><!-- termina barra de botones -->
+                  </div><!-- termina barra de botones --
                   <form action="#" class="clearfix" method="post">
                       <textarea class="form-control" name="respuesta" rows="5">Con cualquier texto</textarea>
                       <input class="btn btn-verde pull-right" type="submit" value="GUARDAR" />
                   </form>
-               </div>
+               </div><!-- Termina texto verde-->
                
                <!-- ===== <!-- BOTONES     -->
                <nav class="navegacion clearfix">
