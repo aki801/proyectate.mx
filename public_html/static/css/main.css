@@ -966,25 +966,24 @@ Actividad de relación
     margin-bottom: 35px;
 }
 
-.card-concepto h4 {
-    padding: 62px 20px;
-    font-weight: bolder;
-    
-}
 .card-concepto{
     background-color: #fafafa;
-    height: auto;
-    margin-top: 25px;
-    margin-bottom: 45px;
+    height: 300px;
+    margin-bottom: 25px;
     padding: 10px 10px; 
     border-radius: 15px;
     box-shadow: 0px 0px 10px #8b8b8b;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .card-definicion {
     background-color: #fafafa;
-    height: auto;
-    margin-top: 25px;
+    height: 300px;
+    margin-bottom: 25px;
     padding: 20px 20px; 
     border-radius: 15px;
     box-shadow: 0px 0px 10px #8b8b8b;
@@ -1011,6 +1010,24 @@ Actividad de relación
     color: #313131;
     background-color: white;
     
+}
+
+.tarj-numero {
+    margin-top: 0px;
+    float: left;
+    padding: 0px 20px 0px 5px;
+    
+}
+
+
+.card-concepto .tarj-numero {
+    margin-top: 0px;
+    padding: 5px;
+    position: absolute;
+    top:5px;
+    left: 5px;
+}
+
 }
 /**********Termina Actividad relacion *************/
 
