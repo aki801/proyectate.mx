@@ -163,7 +163,7 @@
                <p>Antes que nada, tienes que definir con mucha claridad si lo que te interesa analizar es un proyecto en particular o la organización que tienes. Aquí nos enfocaremos en un solo objetivo de tu organización o de tu proyecto, para simplificar el ejercicio que te proponemos. De cualquier manera, es muy importante que a lo largo de todo el análisis te centres en sólo un proyecto o sólo en tu organización.</p>
                 <p>¿Quieres analizar un proyecto o quieres analizar a tu organización?</p>
                
-               <div class="atexto brojo">
+               <div class="atexto brojo" id="borde">
                   <div class="options">
                     <button onClick="transform('bold', null)">
                       <i class="fas fa-bold"></i>
@@ -207,7 +207,7 @@
                     <input type="number" onChange="transform('fontSize', this.value)" value="3" max="7" min="1">
                   </div><!-- termina barra de botones -->
                   <form action="#" class="clearfix" method="post">
-                      <textarea class="form-control" id="textoRespuesta" rows="5" placeholder="No has ingresado tu aporte" onchange="cambiarColor()"></textarea>
+                      <textarea class="form-control" id="textoRespuesta" rows="5" placeholder="No has ingresado tu aporte" onkeyup="cambiarColor()"></textarea>
                       <input class="btn btn-verde pull-right" type="submit" value="GUARDAR" />
                   </form>
     </div>
@@ -314,6 +314,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 <!-- partial -->
   <script  src="../public_html/static/js/script.js"></script> 
+  <script  src="../public_html/static/js/validaciones.js"></script> 
 
     
     

@@ -859,10 +859,11 @@ Color de fondo para la descripción: #eeeeee
 .atexto textarea {
     margin-bottom: 5px;
 }
-.brojo textarea {
+
+/*.brojo textarea {
     color: #e37474;
 }
-/*
+
 input[type="text"] {
   height: 20pt;
   width: 100%;
@@ -925,7 +926,7 @@ input[type="number"] {
 /***********************************************************************
 Actividad de opcion
 ************************************************************************/
-.custom-radio1, .custom-radio2, .custom-radio3 {
+.custom-radio {
     background-color: #e2e2e2;
     border-radius: 15px;
     padding: 10px;

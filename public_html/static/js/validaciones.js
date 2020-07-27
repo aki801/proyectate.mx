@@ -54,17 +54,34 @@ function recuperacontrasenia() {
 /***********************************************************************/
 function cambiarColor() {
     /*Funcion que cambia el color del borde de class="atexto brojo" --> class="atexto bverde" */
-    var colorBorde = document.getElementsByClassName("atexto brojo");
+    var colorBorde = document.getElementById("borde");
     var texto = document.getElementById("textoRespuesta").value;
     
-    if (texto != ""){
-        colorBorde.className = "bverde";   
-    }
-    
-    
+    if (texto.length != 0){
+        colorBorde.className = colorBorde.className.replace("brojo", "bverde");//para reemplazar el color de rojo a verde
+    }  
 }
 
 
 /***********************************************************************
                     Vailadcion para actividadopcion.html
+/***********************************************************************/
+function escogerOpcion(){
+    var radioBien = document.getElementsByName("radioBien");
+    var mnjCorrecto = document.getElementById("msn-correcto");
+    var mnjIncorrecto = document.getElementById("msn-incorrecto");
+    
+    if(radioBien.checked){
+        mnjCorrecto.style.display= "block";
+        mnjIncorrecto.style.display= "none";
+        fondoCorrecto.style.backgroundColor = "#b8e3a6";
+    }else {
+        mnjIncorrecto.style.display= "block";
+        mnjCorrecto.style.display= "none";
+        fondoIncorrecto.style.backgroundColor = "#e37474";
+    }
+}
+
+/***********************************************************************
+                  
 /***********************************************************************/
