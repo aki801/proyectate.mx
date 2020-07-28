@@ -934,21 +934,21 @@ Actividad de opcion
     font-weight: bold;
 }
 
-.custom-radio2 {
+/*.cuadroCorrecto {
     background-color: #b8e3a6;
 }
 
-.custom-radio3 {
+.cuadroMal {
     background-color: #e37474;
-}
+}*/
 
-.msn-correcto {
+#msn-correcto {
     color: #4b9418;
     padding: 5px;
     margin-left: 15px;
 }
 
-.msn-incorrecto {
+#msn-incorrecto {
     color: #e37474;
     padding: 5px;
     margin-left: 15px;

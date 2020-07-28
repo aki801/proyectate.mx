@@ -167,26 +167,26 @@
                <strong><h3> ¿QUÉ ES UN PROBLEMA?</h3></strong>
                 <br>
                
-               <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+               <div class="custom-radio" id="cuadroMal">
+                  <input type="radio" id="radioMal" name="customRadio" onclick="escogerOpcion()">
                   <label class="custom-control-label" for="customRadio1"></label>Un ejercicio que alguien nos ha dado para que nosotros practiquemos algun a lección que hemos aprendido
                 </div>
-                <p class="msn-incorrecto">¡Tu respuesta es incorrecta! ¡ Intentalo de nuevo!<br><br>
-               Recuerda que los problemas son situaciones que pueden tener una solición y que puedes delimitar en un contexto. Además, los problemas son situaciones que puedes ayudar a resolver."</p>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <p id="msn-incorrecto">¡Tu respuesta es incorrecta! ¡ Intentalo de nuevo!<br><br> 
+                Recuerda que los problemas son situaciones que pueden tener una solición y que puedes delimitar en un contexto. Además, los problemas son situaciones que puedes ayudar a resolver."</p>
+                
+                 <div class="custom-radio" id="cuadroCorrecto">
+                  <input type="radio" id="radioBien" name="customRadio" onclick="escogerOpcion()">
                   <label class="custom-control-label" for="customRadio2"> </label>Situaciones que ocurren a nuestro alrededor, que no nos gustan pero podemos delimitar, tienen solución y podemos ayudar a resolver. 
                 </div>
-                <p class="msn-correcto">¡Felicidades, tu respuesta es correcta!<br><br>
+                <p id="msn-correcto">¡Felicidades, tu respuesta es correcta!<br> <br> 
                 Recuerda que los problemas son situaciones que pueden tener una solición y que puedes delimitar en un contexto. Además, los problemas son situaciones que puedes ayudar a resolver."</p>
-               <br> <br>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                
+                 <div class="custom-radio" id="cuadroMal">
+                  <input type="radio" id="radioMal" name="customRadio" onclick="escogerOpcion()">
                   <label class="custom-control-label" for="customRadio3"></label>Un conflicto de personas que conocemos pero que está fuera de nuestro alcance el ayudar a resolver.
                 </div>
-               <p class="msn-incorrecto">¡Tu respuesta es incorrecta! ¡ Intentalo de nuevo!<br><br>
+               <p id="msn-incorrecto">¡Tu respuesta es incorrecta! ¡ Intentalo de nuevo!<br> <br> 
                Recuerda que los problemas son situaciones que pueden tener una solición y que puedes delimitar en un contexto. Además, los problemas son situaciones que puedes ayudar a resolver."</p>
-               <br> <br>
                 <a class="btn btn-verde btn-derecha" href="">SIGUIENTE</a>
             </div>
               
@@ -235,9 +235,9 @@
     
     <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 <!-- partial -->
-  <script  src="../public_html/static/js/script.js"></script> 
+   <script  src="../public_html/static/js/script.js"></script> 
+    <script src="static/js/validaciones.js"></script>
 
-    
     
 </body>
 </html>

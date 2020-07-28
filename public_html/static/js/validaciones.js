@@ -59,7 +59,9 @@ function cambiarColor() {
     
     if (texto.length != 0){
         colorBorde.className = colorBorde.className.replace("brojo", "bverde");//para reemplazar el color de rojo a verde
-    }  
+    } else {
+        colorBorde.className = colorBorde.className.replace("bverde", "brojo");
+    }
 }
 
 
@@ -67,21 +69,23 @@ function cambiarColor() {
                     Vailadcion para actividadopcion.html
 /***********************************************************************/
 function escogerOpcion(){
-    var radioBien = document.getElementsByName("radioBien");
+    var radioBien = document.getElementById("radioBien");
+    var recuadroBien = document.getElementById("cuadroCorrecto");
+    var recuadroMal = document.getElementById("cuadroMal");
     var mnjCorrecto = document.getElementById("msn-correcto");
     var mnjIncorrecto = document.getElementById("msn-incorrecto");
     
     if(radioBien.checked){
         mnjCorrecto.style.display= "block";
         mnjIncorrecto.style.display= "none";
-        fondoCorrecto.style.backgroundColor = "#b8e3a6";
+        recuadroBien.style.backgroundColor = "#b8e3a6";
     }else {
         mnjIncorrecto.style.display= "block";
         mnjCorrecto.style.display= "none";
-        fondoIncorrecto.style.backgroundColor = "#e37474";
+        recuadroMal.style.backgroundColor = "#e37474";
     }
 }
 
 /***********************************************************************
-                  
+                  Vailadcion para perfil.html
 /***********************************************************************/
