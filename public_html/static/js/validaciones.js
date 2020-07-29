@@ -66,10 +66,11 @@ function cambiarColor() {
 
 
 /***********************************************************************
-                    Vailadcion para actividadopcion.html
+                    Vailadcion para actividadopcion.html  #e2e2e2
 /***********************************************************************/
 function escogerOpcion(){
     var radioBien = document.getElementById("radioBien");
+    var radioMal = document.getElementById("radioMal");
     var recuadroBien = document.getElementById("cuadroCorrecto");
     var recuadroMal = document.getElementById("cuadroMal");
     var mnjCorrecto = document.getElementById("msn-correcto");
@@ -79,10 +80,12 @@ function escogerOpcion(){
         mnjCorrecto.style.display= "block";
         mnjIncorrecto.style.display= "none";
         recuadroBien.style.backgroundColor = "#b8e3a6";
+        recuadroMal.style.backgroundColor = "#e2e2e2";
     }else {
         mnjIncorrecto.style.display= "block";
         mnjCorrecto.style.display= "none";
         recuadroMal.style.backgroundColor = "#e37474";
+        recuadroBien.style.backgroundColor = "#e2e2e2";
     }
 }
 

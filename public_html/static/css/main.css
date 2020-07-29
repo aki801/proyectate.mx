@@ -934,13 +934,13 @@ Actividad de opcion
     font-weight: bold;
 }
 
-/*.cuadroCorrecto {
+.cuadroCorrecto {
     background-color: #b8e3a6;
 }
 
 .cuadroMal {
     background-color: #e37474;
-}*/
+}
 
 #msn-correcto {
     color: #4b9418;
