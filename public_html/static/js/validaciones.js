@@ -90,5 +90,46 @@ function escogerOpcion(){
 }
 
 /***********************************************************************
+                    Vailadcion para actividadopcion.html  
+/***********************************************************************/
+function escogerOpcion(input_selec){
+  //console.log(input_selec.getAttribute("es_correcta"));
+    var div = input_selec.parentElement;//obtiene el elemnto padre de input_select (boton radio)
+    var msg = div.nextElementSibling;//obtiene el elemento que le sigue a input_select
+    var opts = document.getElementsByClassName("custom-radio");
+    //console.log(opts);
+    Array.from(opts).forEach(function(div, i){
+        div.className =  div.className.replace("cuadro_bien", "");
+        div.className =  div.className.replace("cuadro_mal", "");
+        var p = div.nextElementSibling;
+        var existe = p.className.includes('oculto');//verifica si en el nombre de la clase se incluye la parabra "oculto"
+        //si la palabra "oculto no existe, entonces se añadira"
+        if(existe == false){
+           p.className = p.className + " oculto";
+           }
+    });
+  if(input_selec.getAttribute("es_correcta") == "v"){
+      div.className = div.className + " cuadro_bien"; 
+    }
+    else{
+        div.className = div.className + " cuadro_mal"; 
+    }
+    msg.className =  msg.className.replace("oculto", "");
+}
+
+/***********************************************************************
+                  Vailadcion para Guardar si el usuario esta registrado
+/***********************************************************************/
+
+function usuarioGuardar(){
+    var user = {{ user }};
+    var usuariosave =  document.getElementById("msjUsuarioSave");
+    
+    if (user != true){
+        usuariosave.style.display = "block";   
+    }
+    usuariosave.style.display = "none";  
+}
+/***********************************************************************
                   Vailadcion para perfil.html
 /***********************************************************************/
