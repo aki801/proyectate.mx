@@ -92,14 +92,13 @@
             </div>
             <div class="form-group mb-25">
               <label class="etiqueta-normal">Reinicia contraseña (opcional)</label>
-	      <input class="form-control mb-10" id="contrasenia" type="password"
-              placeholder="Nueva contraseña" name="contrasenia" /> 
+	      <input class="form-control mb-10" id="contrasenia" type="password"placeholder="Nueva contraseña" name="contrasenia" onkeyup="validarPass()" /> 
               <div class="alert alert-danger" id="msjPassError1">
                 <p>La contraseña debe tener como minimo una minuscula, una
-		mayuscula, un numero y minimo 8 caracteres</p>
+		          mayuscula, un numero y minimo 8 caracteres</p>
               </div> 
 	      <input class="form-control" id="contrasenia2" type="password"
-              placeholder="Confirmar contraseña" />
+              placeholder="Confirmar contraseña"  onkeyup="validarPass2()"/>
               <div class="alert alert-danger" id="msjPassError2">
                 <p>Las contraseñas no son iguales</p>
               </div>
